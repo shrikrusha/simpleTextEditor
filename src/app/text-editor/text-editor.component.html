@@ -1,0 +1,35 @@
+<div class="editor-container">
+    <div class="editor-toolbar">
+      <!-- Text Formatting Options -->
+      <button (click)="format('bold')"><mat-icon> format_bold</mat-icon></button>
+      <button (click)="format('italic')"><mat-icon> format_italic</mat-icon></button>
+      <button (click)="format('underline')"><mat-icon> format_underlined</mat-icon></button>
+      
+      <!-- Alignment Options -->
+      <button (click)="format('justifyLeft')"><mat-icon> format_align_left</mat-icon></button>
+      <button (click)="format('justifyCenter')"><mat-icon> format_align_center</mat-icon></button>
+      <button (click)="format('justifyRight')"><mat-icon> format_align_right</mat-icon></button>
+  
+      <!-- List Options -->
+      <button (click)="format('insertOrderedList')"><mat-icon>list</mat-icon></button>
+      <button (click)="format('insertUnorderedList')"><mat-icon>list</mat-icon></button>
+  
+      <!-- Undo / Redo -->
+      <button (click)="undo()"><mat-icon>undo</mat-icon></button>
+      <button (click)="redo()"><mat-icon>redo</mat-icon></button>
+  
+      <!-- Search and Replace -->
+      <input [(ngModel)]="searchText" placeholder="Search Text" style="margin-right: 0;">
+      <button (click)="search()" style="border: 1px solid;border-left: none;">Search</button>
+      <input [(ngModel)]="replaceText" placeholder="Replace Text" style="margin-right: 0;">
+      <button (click)="replace()" style="border: 1px solid;border-left: none;">Replace</button>
+
+      <!-- Save as Docs and PDF -->
+      <button (click)="saveAsDoc()">
+        <mat-icon>save</mat-icon>
+      </button>   
+    </div>
+  
+    <div class="editor-content" contenteditable="true" #editorRef></div>
+  </div>
+  
